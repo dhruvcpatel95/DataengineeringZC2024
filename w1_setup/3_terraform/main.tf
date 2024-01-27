@@ -1,20 +1,21 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "5.13.0"
     }
   }
 }
 
 provider "google" {
-    project     = "terraform-412420"
-    region      = "us-east"
+  credentials = file(var.credentials)
+  project = var.project
+  region  = var.region
 }
 
-resource "google_storage_bucket" "terra-bucket" {
-  name          = "terraform-412420-terra-bucket"
-  location      = "US"
+resource "google_storage_bucket" "test-bucket" {
+  name          = var.gcs_storage_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -26,3 +27,10 @@ resource "google_storage_bucket" "terra-bucket" {
     }
   }
 }
+
+
+resource "google_bigquery_dataset" "test_dataset" {
+  dataset_id = var.big_query_dataset_name
+  location = var.location
+}
+
