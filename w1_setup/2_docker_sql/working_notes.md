@@ -22,3 +22,18 @@ Infrastructure as code
 - destroy - remove everything defined in the tf files (delete the resources from the cloud)
 
 
+# Orchestrator
+What they do?
+- Workflow management
+- Automation
+- Error Handling
+- Recovery
+- Monitoring and Alerting
+- Resource Optimization
+- Observability
+- Debugging
+- Compliance / Auditing
+
+## Mage Orchestrator
+
+docker pull mageai/mageai:latest to update mage
