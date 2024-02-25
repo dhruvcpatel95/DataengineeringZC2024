@@ -1,6 +1,8 @@
 *.json
 *.env
 
+*/data
+
 w1_setup/2_docker_sql/ny_taxi_postgres_data/
 w1_setup/terraform/keys/
 
